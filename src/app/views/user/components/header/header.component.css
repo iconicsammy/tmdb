@@ -1,0 +1,22 @@
+.navbar {
+    z-index: 10000000;
+}
+
+.nav-item .nav-link, .d-flex .nav-link {
+    color: #fff;
+}
+
+.nav-background {
+     height: 81px;
+     background-color: #262626;
+}
+
+.username {
+    color: white;
+}
+
+.navbar-collapse {
+    background: #333;
+    margin: -.5rem -1rem;
+    padding: .5rem 1rem;
+    }

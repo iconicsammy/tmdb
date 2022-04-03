@@ -1,0 +1,12 @@
+<div>
+  <div class="input-group mb-3">
+    <input type="text" #query (input)="handleSearchTerm(query.value)" class="form-control" placeholder="Search TV Shows" aria-label="Search TV Shows" aria-describedby="basic-addon2">
+    <div class="input-group-append">
+        <button class="input-group-button btn btn-primary" (click)="search()">Search</button>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <input type="checkbox" value="true" (change)="handleAdultChoice($event)"> Include Adult
+  </div>
+</div>

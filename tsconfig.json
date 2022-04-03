@@ -2,10 +2,22 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "src",
+    "paths": {
+      "@start/*": ["app/views/start/*"],
+      "@user/*": ["app/views/user/*"],
+      "@components/*": ["app/views/user/components/*"],
+      "@services/*": ["app/services/*"],
+      "@config/*": ["app/config/*"],
+      "@interfaces/*": ["app/interfaces/*"],
+      "@enums/*": ["app/enums/*"],
+      "@utils/*": ["app/utils/*"],
+      "@assets/*": ["assets/*"]
+    },
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "strictPropertyInitialization": false,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,

@@ -1,0 +1,15 @@
+<div class="background">
+        
+    <div class="main">
+        <img src="assets/images/logos/blue3.png" alt="BrightMarbles Films"/>
+            <div class="login">
+             
+                    <label for="chk" aria-hidden="true">Authenticate</label>
+                    <input [value]="apiKey" type="text" #inputApiKey (input)="handleUserInput(inputApiKey.value)" placeholder="API Key" class="form-control">
+                    <button id="authBtn" (click)="authenticate()">Authenticate API Key</button>
+                  
+              
+            </div>
+    </div>
+    <p class="copyright"><a href="http://www.freepik.com">Background Image &copy; vectorpocket / Freepik</a></p>
+</div>

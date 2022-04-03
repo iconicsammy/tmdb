@@ -1,0 +1,15 @@
+<div>
+    <a (click)="loadMediaDetails($event)" class="media-thumb-nail"><figure>
+        <span style="position: absolute; right:0; top: 10; z-index: 10000; background-color: white;"><fa-icon [icon]="viewedAlready()"></fa-icon></span> 
+        
+        <img src="{{endPoints.imagesURL}}{{posterFor.poster_path}}" class="img-fluid" alt="{{posterFor.name}}">
+    
+        <figcaption>
+            
+            <h4>{{posterFor.name}}</h4 > <span class="truncate-long-text">{{posterFor.overview}}</span>
+        </figcaption>
+    </figure>
+</a>
+</div>
+
+<app-modal [showModal]="showDetails" [media]="posterFor" (closeDetailsEvent)="detailsClosed($event)"></app-modal>

@@ -1,0 +1,60 @@
+<div *ngIf="!loading" class="container-fluid">
+    <app-nav></app-nav>
+    <h1 class="title">{{tvInfo.name}}</h1>
+
+        <div class="row float-left">
+
+            <table class="table table-borderless">
+              <tr>
+                  <td>
+                    <table class="table table-borderless">
+                        <tbody>
+                            <tr><td><img src="{{endPoints.imagesURL}}{{tvInfo.poster_path}}" alt="{{tvInfo.name}}"></td></tr>
+                            <tr><td>Seasons</td><td>{{tvInfo.number_of_seasons}}</td></tr>
+                            <tr><td>Episodes</td><td>{{tvInfo.number_of_episodes}}</td></tr>
+                            <tr><td>Adults Only?</td><td>{{tvInfo.adult}}</td></tr>
+                            <tr><td>Status</td><td>{{tvInfo.status}}</td></tr>
+                            <tr><td>First Aired On</td><td>{{tvInfo.first_air_date}}</td></tr>
+                            <tr><td>Last Aired On</td><td>{{tvInfo.last_air_date}}</td></tr>
+                            <tr><td>Genres</td><td><span *ngFor="let genre of tvInfo.genres"> {{genre.name}} </span></td></tr>
+                            <tr><td colspan="2"><a href="{{tvInfo.homepage}}" target="_blank">Homepage</a></td></tr>
+
+                            <tr><td colspan="2"><app-notetaker [tvId]="id"></app-notetaker></td></tr>
+                        </tbody>
+
+                       </table>
+                  </td>
+                  <td style="vertical-align:top">
+                    <p>{{tvInfo.overview}}</p>
+                    <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Season</th>
+                            <th>Title</th>
+                            <th>Number of Episodes</th>
+                            <th>Aired On</th>
+                            <th>Viewed</th>
+                        </tr>
+                        
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let season of tvInfo.seasons">
+                         <td>{{season.season_number}}</td>
+                         <td><a [routerLink]="['/user/tv-season-details' ,id, season.season_number, tvInfo.name]">{{season.name}}</a></td>
+                         <td>{{season.episode_count}}</td>
+                         <td>{{season.air_date}}</td>
+                         <td>{{seasonIsViewed(season.season_number)}}</td>
+                        </tr>
+                    </tbody>
+                    </table>
+
+                
+                
+                </td>
+              </tr>
+
+            </table>
+
+
+    </div>
+</div>

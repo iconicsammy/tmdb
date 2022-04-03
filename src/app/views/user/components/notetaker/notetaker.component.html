@@ -1,0 +1,5 @@
+<div class="form-group">
+    <label for="note">Note</label>
+    <textarea class="form-control" value="{{note}}" id="note" rows="4" #noteMaker (input)="handleInput(noteMaker.value)"></textarea>
+    <button type="submit" class="btn btn-primary" (click)="addNote()">Add Note</button>
+</div>

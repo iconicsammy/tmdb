@@ -1,0 +1,7 @@
+#pagination { font-size : .8em; list-style-type : none; margin : 0; overflow : hidden; padding : 2px 0; text-transform : uppercase }
+
+#pagination li { display : inline } 
+
+#pagination a,#pagination a:visited { color : #999; text-decoration : none } #pagination a:hover { color : #000; text-decoration : none } 
+
+#pagination .pagination-prev a {  float : left; padding-left : 20px } #pagination .pagination-next a { float : right; padding-right : 20px; text-align : right }

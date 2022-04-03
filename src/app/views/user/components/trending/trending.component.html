@@ -1,0 +1,8 @@
+<h1 class="title">{{header}}</h1>
+<div class="container">
+    <div class="row">
+
+        <app-poster *ngFor="let media of medias; trackBy: trackMedia" [posterFor]="media"></app-poster>
+
+    </div>
+</div>

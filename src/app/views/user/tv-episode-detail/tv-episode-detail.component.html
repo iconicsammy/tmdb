@@ -1,0 +1,59 @@
+<div *ngIf="!loading" class="container-fluid">
+    <app-nav></app-nav>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a [routerLink]="['/user/tv', id]">{{tvShowName}}</a></li>
+          <li class="breadcrumb-item"><a [routerLink]="['/user/tv', id, seasonNumber, tvShowName]">Season {{seasonNumber}}</a></li>
+          <li class="breadcrumb-item active" aria-current="page">{{episodeInfo.name}}</li>
+        </ol>
+      </nav>
+
+        <div class="row float-left">
+
+            <table class="table table-borderless">
+              <tr>
+                  <td style="vertical-align:top">
+                    <table class="table table-borderless">
+                        <tbody>
+                           
+                      
+                            <tr><td>First Aired On</td><td>{{episodeInfo.air_date}}</td></tr>
+                            <tr><td colspan="2"><app-notetaker [tvId]="id" [seasonNumber]="seasonNumber" [episodeNumber]="episodeNumber"></app-notetaker></td></tr>
+                       
+                        </tbody>
+
+                       </table>
+                  </td>
+                  <td style="vertical-align:top">
+                    <p>{{episodeInfo.overview}}</p>
+                    <h4>Guest Stars</h4>
+                    <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Character</th>
+                        
+                        </tr>
+                        
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let star of episodeInfo.guest_stars">
+                         <td>{{star.name}}</td>
+                         <td>{{star.character}}</td>
+                        </tr>
+                    </tbody>
+                    </table>
+
+                
+                
+                </td>
+              </tr>
+
+            </table>
+
+
+    </div>
+</div>
+
+

@@ -1,0 +1,17 @@
+<div *ngIf="!loading" class="container-fluid">
+    <app-nav></app-nav>
+    <h1 class="title">{{header}}</h1>
+    <div class="container">
+        <p>Your search for <strong>{{query}}</strong> returned {{totalFound}} results.</p>
+       <app-search-pagination [totalPages]="totalPages" (goToPageEvent)="loadPage($event)"></app-search-pagination>
+
+
+        <div class="row">
+    
+            <app-poster *ngFor="let media of medias; trackBy: trackMedia" [posterFor]="media"></app-poster>
+    
+        </div>
+
+        <app-search-pagination [totalPages]="totalPages" (goToPageEvent)="loadPage($event)"></app-search-pagination>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngStyle]="{'display':displayStyle}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">{{media.name}}</h4>
+      </div>
+      <div class="modal-body">
+        <p>{{media.overview}}</p>
+       other data we have:
+
+       id: number;
+       backdrop_path: string;
+       genre_ids: number[];
+       original_language: string;
+       name: string;
+       poster_path: string;
+       vote_count: number;
+       origin_country: string[];
+       vote_average: number;
+       first_air_date: string;
+       overview: string;
+       original_name: string;
+       popularity: number;
+       media_type: string;
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" 
+                (click)="closePopup()">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
